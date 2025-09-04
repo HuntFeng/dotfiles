@@ -1,0 +1,282 @@
+{
+  "template-article": {
+    "prefix": [
+      "template",
+      "article"
+    ],
+    "body": [
+      "\\documentclass{article}",
+      "\\usepackage{amssymb, amsmath, amsthm}",
+      "\\usepackage{physics}",
+      "\\usepackage{float, subcaption, graphicx}",
+      "\\usepackage{hyperref}",
+      "",
+      "\\title{$1}",
+      "\\author{Hunt Feng\\inst{1}}",
+      "\\date{\\today}",
+      "",
+      "\\begin{document}",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "% title and TOC",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "\\maketitle",
+      "\\tableofcontents",
+      "",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "% contents",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "$2",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "% references",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "\\newpage",
+      "\\bibliographystyle{abbrv}",
+      "\\bibliography{references}",
+      "\\end{document}"
+    ],
+    "description": "Article template"
+  },
+  "template-beamer": {
+    "prefix": [
+      "template",
+      "beamer"
+    ],
+    "body": [
+      "\\documentclass{beamer}",
+      "\\usetheme{Madrid}",
+      "\\colorlet{beamer@blendedblue}{green!40!black}",
+      "\\setbeamertemplate{caption}[numbered]",
+      "\\usepackage{amssymb, amsmath, amsthm}",
+      "\\usepackage{physics}",
+      "\\usepackage{float, subcaption, graphicx}",
+      "\\usepackage{hyperref}",
+      "",
+      "\\title{$1}",
+      "\\author{Hunt Feng\\inst{1}}",
+      "\\institute[Usask]",
+      "{",
+      "\t\\inst{1}%",
+      "\tFaculty of Physics And Engineering Physics\\\\",
+      "\tUniversity of Saskatchewan",
+      "}",
+      "\\date{\\today}",
+      "",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "% define section page",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "\\AtBeginSection[]",
+      "{",
+      "\t\\begin{frame}{Outline of Presentation}",
+      "\t\t\\tableofcontents[currentsection]",
+      "\t\\end{frame}",
+      "}",
+      "",
+      "\\begin{document}",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "% title and TOC",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "\\maketitle",
+      "\\begin{frame}{Outline of Presentation}",
+      "\t\\tableofcontents",
+      "\\end{frame}",
+      "",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "% contents",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "$2",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "% references",
+      "%%%%%%%%%%%%%%%%%%%%",
+      "\\newpage",
+      "\\begin{frame}[allowframebreaks]",
+      "\t\\bibliographystyle{abbrv}",
+      "\t\\bibliography{references}",
+      "\\end{frame}",
+      "\\end{document}"
+    ],
+    "description": "Beamer template"
+  },
+  "frac": {
+    "prefix": [
+      "\\frac",
+      "frac"
+    ],
+    "body": [
+      "\\frac{$1}{$2}"
+    ],
+    "description": "Fraction"
+  },
+  "cite": {
+    "prefix": [
+      "\\cite",
+      "cite"
+    ],
+    "body": [
+      "\\cite{$1}"
+    ],
+    "description": "Citation"
+  },
+  "large-round-bracket": {
+    "prefix": [
+      "\\left(",
+      "left("
+    ],
+    "body": [
+      "\\left($1\\right)"
+    ],
+    "description": "Large round bracket"
+  },
+  "large-square-bracket": {
+    "prefix": [
+      "\\left[",
+      "left["
+    ],
+    "body": [
+      "\\left[$1\\right]"
+    ],
+    "description": "Large square bracket"
+  },
+  "ref": {
+    "prefix": [
+      "\\ref",
+      "ref"
+    ],
+    "body": [
+      "\\ref{$1}"
+    ],
+    "description": "Reference"
+  },
+  "ref-chap": {
+    "prefix": [
+      "\\ref-chap",
+      "ref-chap"
+    ],
+    "body": [
+      "Chap.~\\ref{chap:$1}"
+    ],
+    "description": "Reference to chapter"
+  },
+  "ref-sec": {
+    "prefix": [
+      "\\ref-sec",
+      "ref-sec"
+    ],
+    "body": [
+      "Sec.~\\ref{sec:$1}"
+    ],
+    "description": "Reference to section"
+  },
+  "ref-eq": {
+    "prefix": [
+      "\\ref-eq",
+      "ref-eq"
+    ],
+    "body": [
+      "Eq.~(\\ref{eq:$1})"
+    ],
+    "description": "Reference to equation"
+  },
+  "ref-fig": {
+    "prefix": [
+      "\\ref-fig",
+      "ref-fig"
+    ],
+    "body": [
+      "Fig.~\\ref{fig:$1}"
+    ],
+    "description": "Reference to figure"
+  },
+  "ref-table": {
+    "prefix": [
+      "\\ref-table",
+      "ref-table"
+    ],
+    "body": [
+      "Table.~\\ref{table:$1}"
+    ],
+    "description": "Reference to Table"
+  },
+  "frame": {
+    "prefix": [
+      "frame",
+      "\\frame"
+    ],
+    "body": [
+      "\\begin{frame}{$1}",
+      "$2",
+      "\\end{frame}"
+    ],
+    "description": "Beamer frame environment"
+  },
+  "equation": {
+    "prefix": [
+      "\\equation",
+      "equation"
+    ],
+    "body": [
+      "\\begin{equation}",
+      "$2",
+      "\t\\label{eq:$1}",
+      "\\end{equation}"
+    ],
+    "description": "Equation environment"
+  },
+  "figure": {
+    "prefix": [
+      "figure",
+      "\\figure"
+    ],
+    "body": [
+      "\\begin{figure}[htbp!]",
+      "\t\\centering",
+      "\t\\includegraphics[width=0.7\\textwidth]{figures/$1}",
+      "\t\\caption{$2}",
+      "\t\\label{fig:$3}",
+      "\\end{figure}"
+    ],
+    "description": "Figure environment"
+  },
+  "table": {
+    "prefix": [
+      "table",
+      "\\table"
+    ],
+    "body": [
+      "\\begin{table}[htbp!]",
+      "\t\\centering",
+      "\t\\begin{tabular}{|c|c|}",
+      "\t\t\\hline",
+      "\t\t  & \\",
+      "\t\t\\hline",
+      "\t\\end{tabular}",
+      "\t\\caption{$1}",
+      "\t\\label{table:$2}",
+      "\\end{table}"
+    ],
+    "description": "Table environment"
+  },
+  "enumerate": {
+    "prefix": [
+      "enumerate",
+      "\\enumerate"
+    ],
+    "body": [
+      "\\begin{enumerate}",
+      "\t\\item $1",
+      "\\end{enumerate}"
+    ],
+    "description": "Enumerate items"
+  },
+  "lstlisting": {
+    "prefix": [
+      "lstlisting",
+      "\\lstlisting"
+    ],
+    "body": [
+      "\\begin{lstlisting}[language=$1] \\label{lst:$3}",
+      "$2",
+      "\\end{lstlisting}"
+    ],
+    "description": "Code block"
+  }
+}
