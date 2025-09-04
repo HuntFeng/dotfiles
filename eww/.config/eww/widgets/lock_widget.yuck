@@ -1,0 +1,13 @@
+(
+  defwidget lock_widget []
+  (
+    tooltip
+    "Lock Screen"
+    (
+      button
+      :class "lock"
+      :onclick "betterlockscreen -l dim"
+      ""
+    )
+  )
+)

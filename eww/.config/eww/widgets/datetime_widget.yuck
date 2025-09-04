@@ -1,0 +1,16 @@
+(
+  defwidget datetime_widget []
+  (
+    button 
+    :class "datetime" 
+    :onclick "xdg-open https://calendar.google.com"
+    (
+      tooltip
+      "Open Google Calendar"
+      (
+        label
+        :text {formattime(EWW_TIME, "%A, %H:%M:%S %b %d, %Y")}
+      )
+    )
+  )
+)

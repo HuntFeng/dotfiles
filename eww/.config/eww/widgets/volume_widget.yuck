@@ -1,0 +1,33 @@
+(defpoll volume :interval "0.1s"
+  "amixer -D pulse sget Master | awk -F '[^0-9]+' '/Left:/{print $3}'"
+)
+
+(defpoll is_muted :interval "0.1s"
+  "amixer -D pulse sget Master | grep -q '\\[off\\]' && echo 'true' || echo 'false'")
+
+(defwidget volume_widget []
+  (
+    tooltip
+    "Open pavucontrol"
+    (
+      button
+      :class "volume"
+      :onclick "eww close systemtray && pavucontrol &"
+      (
+        box 
+        :orientation "h"
+        :halign "center"
+        :space-evenly false
+        :spacing 40
+        (
+          label 
+          :text "${is_muted == 'true' ? '' : ''}"
+        )
+        (
+          label 
+          :text "${volume}%"
+        )
+      )
+    )
+  )
+)

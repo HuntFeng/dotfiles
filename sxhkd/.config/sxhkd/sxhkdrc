@@ -1,0 +1,110 @@
+#
+# wm independent hotkeys
+#
+
+# make sxhkd reload its configuration files:
+# super + Escape
+# 	pkill -USR1 -x sxhkd
+
+# terminal emulator
+super + Return
+	kitty
+
+#
+# rofi hotkeys
+#
+
+# program launcher
+super + {Escape, BackSpace}
+	rofi -modi drun -show drun
+
+super + @space
+	rofi -modi drun -show drun
+
+# calculator
+super + c
+	rofi -modi drun -show calc -no-show-match -no-sort
+
+# window swithcer
+{super,alt} + Tab
+	rofi -modi drun -show window
+
+# email
+super + e
+	evolution &
+
+# browser
+super + b
+	firefox &
+
+# file manager
+super + f
+	kitty yazi	
+
+# screenshot
+ctrl + alt + a
+	flameshot gui &
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# close a window
+super + q
+	bspc node -c
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,s}
+	if bspc query -N -n focused.tiled > /dev/null; then \
+		bspc node -t {floating}; \
+	else \
+		bspc node -t {tiled}; \
+	fi
+
+super + m
+	if bspc query -N -n focused.fullscreen > /dev/null; then \
+		bspc node -t {tiled}; \
+	else \
+		bspc node -t {fullscreen}; \
+	fi
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {h,j,k,l,Left,Down,Up,Right}
+	bspc node -f {west,south,north,east,west,south,north,east}
+
+# focus or send to the given desktop
+super + {_,alt + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}' 
+
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a window
+# must define the vars before if else statement
+super + alt + {Left,Down,Up,Right}
+	{dir=west dx=-20 dy=0,dir=south dx=0 dy=20,dir=north dx=0 dy=-20,dir=east dx=20 dy=0}; \
+	if bspc query -N -n focused.tiled > /dev/null; then \
+		bspc node -s "$dir.local" --follow || bspc node -m "$dir" --follow; \
+	else \
+		bspc node -v $dx $dy; \
+	fi

@@ -1,0 +1,15 @@
+@import "./base.scss"
+
+.workspace {
+  @extend .box;
+  min-width: 200px;
+  font-size: 40px
+}
+
+.active-workspace {
+  font-weight: bold;
+}
+
+.inactive-workspace {
+  color: #b0b4bc;
+}

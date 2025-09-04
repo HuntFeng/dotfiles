@@ -1,0 +1,13 @@
+(
+  defwidget logout_widget []
+  (
+    tooltip
+    "Logout"
+    (
+      button
+      :class "logout"
+      :onclick "bspc quit"
+      "󰗽"
+    )
+  )
+)

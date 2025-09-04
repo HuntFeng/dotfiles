@@ -1,0 +1,60 @@
+(include "widgets/volume_widget.yuck")
+(include "widgets/battery_widget.yuck")
+(include "widgets/network_widget.yuck")
+(include "widgets/lock_widget.yuck")
+(include "widgets/logout_widget.yuck")
+(include "widgets/shutdown_widget.yuck")
+(include "widgets/restart_widget.yuck")
+
+(
+  defwidget systemtray_widget []
+  (
+    button 
+    :class "systemtray_widget"
+    :halign "end"
+    :onclick "eww open systemtray --toggle"
+    ""
+  )
+)
+
+(
+  defwindow systemtray []
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry :x "-5%"
+                      :y "8%"
+                      :width "30%"
+                      :anchor "top right")
+  (
+    eventbox
+    :onhoverlost "eww close systemtray"
+    (
+      box
+      :orientation "v"
+      :halign "end"
+      :valign "start"
+      :spacing 20
+      (
+        box 
+        :orientation "h"
+        :halign "end"
+        :space-evenly false
+        :spacing 20
+        (volume_widget)
+        (battery_widget)
+        (network_widget)
+      )
+      (
+        box 
+        :orientation "h"
+        :halign "start"
+        :space-evenly false
+        :spacing 20
+        (lock_widget)
+        (logout_widget)
+        (restart_widget)
+        (shutdown_widget)
+      )
+    )
+  )
+)

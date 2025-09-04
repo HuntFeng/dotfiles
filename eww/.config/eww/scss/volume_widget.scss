@@ -1,0 +1,10 @@
+@import "./base.scss"
+
+.volume {
+  @extend .box;
+  min-width: 300px;  // Fixed width
+  min-height: 300px;  // Fixed height
+  font-size: 55px;
+  font-weight: bold;
+}
+

@@ -1,0 +1,39 @@
+(
+  defpoll network_status 
+  :interval "5s"
+  "nmcli device status | awk '$2 == \"wifi\"' | awk '{print $3}'"
+)
+
+(
+  defpoll network_name
+  :interval "5s"
+  "nmcli device status | awk '$2 == \"wifi\"' | awk '{print $4}'"
+)
+
+(
+  defwidget network_widget []
+  (
+    tooltip
+    "Open Advanced Network Configuration"
+    (
+      button 
+      :class "wifi"
+      :onclick "eww close systemtray && nm-connection-editor &"
+      (
+        box
+        :orientation "h"
+        :halign "center"
+        :space-evenly false
+        :spacing 30
+        (
+          label
+          :text {network_status == "connected" ? "󰖩": "󱚼"}
+        )
+        (
+          label
+          :text {network_name}
+        )
+      )
+    )
+  )
+)

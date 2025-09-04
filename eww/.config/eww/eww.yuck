@@ -1,0 +1,29 @@
+(include "widgets/workspace_widget.yuck")
+(include "widgets/datetime_widget.yuck")
+(include "widgets/systemtray_widget.yuck")
+
+
+(
+  defwidget bar_widget []
+  (
+    centerbox :orientation "h"
+    (workspace_widget)
+    (datetime_widget)
+    (systemtray_widget)
+  )
+)
+
+(
+  defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :height "5%"
+                      :width "90%"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "5%")
+  (bar_widget)
+)
+
+

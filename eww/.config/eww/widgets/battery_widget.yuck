@@ -1,0 +1,27 @@
+(
+  defwidget battery_widget []
+  (
+    button 
+    :class "battery"
+    (
+      box
+      :orientation "h"
+      :halign "center"
+      :space-evenly false
+      :spacing 30
+      (
+        label 
+        :text "${EWW_BATTERY != '' && EWW_BATTERY.BAT1.status == 'Discharging' ? 
+          (EWW_BATTERY != '' && EWW_BATTERY.total_avg < 20 ? '󰂎' : 
+            EWW_BATTERY != '' && EWW_BATTERY.total_avg < 40 ? '󰁻' : 
+            EWW_BATTERY != '' && EWW_BATTERY.total_avg < 60 ? '󰁾' : 
+            EWW_BATTERY != '' && EWW_BATTERY.total_avg < 80 ? '󰂀' : '󰁹') : '󰂄'}"
+      )
+      (
+        label 
+        :text "${EWW_BATTERY != '' ? round(EWW_BATTERY.total_avg, 0) : 'N/A'}%"
+      )
+    )
+  )
+)
+

@@ -1,0 +1,10 @@
+@import "./base.scss"
+
+.wifi {
+  @extend .box;
+  min-width: 500px;  // Fixed width
+  min-height: 300px;  // Fixed height
+  font-size: 55px;
+  font-weight: bold;
+}
+

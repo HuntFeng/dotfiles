@@ -1,0 +1,17 @@
+format = '''
+\($conda$python\) $directory$git_branch$git_status
+$character
+'''
+
+[conda]
+format = '[$environment](dimmed green)'
+ignore_base = false
+
+[python]
+format = ' [$version](white)'
+
+[git_status]
+format = '\[$untracked$modified$deleted\]'
+untracked = '[U:${count} ](green)'
+modified = '[M:${count}](yellow)'
+deleted = '[ D:${count}](red)'

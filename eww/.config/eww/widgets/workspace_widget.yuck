@@ -1,0 +1,18 @@
+(defpoll current_workspace :interval "0.1s"
+  "bspc query -D -d focused --names")
+
+(defwidget workspace_widget []
+  (box :class "workspace"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (button :onclick "bspc desktop -f ^1"
+            :class "${current_workspace == '1' ? 'active-workspace' : 'inactive-workspace'}"
+            "1")
+    (button :onclick "bspc desktop -f ^2"
+            :class "${current_workspace == '2' ? 'active-workspace' : 'inactive-workspace'}"
+            "2")
+    (button :onclick "bspc desktop -f ^3"
+            :class "${current_workspace == '3' ? 'active-workspace' : 'inactive-workspace'}"
+            "3")))

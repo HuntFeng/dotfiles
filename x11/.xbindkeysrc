@@ -1,0 +1,8 @@
+# use xbindkeys -k to see the actual keycode
+# Volume up
+"amixer set Master 5%+"
+    m:0x0 + c:123
+
+# Volume down
+"amixer set Master 5%-"
+    m:0x0 + c:122

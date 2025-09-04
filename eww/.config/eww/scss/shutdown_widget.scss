@@ -1,0 +1,33 @@
+@import "./base.scss"
+
+.shutdown {
+  @extend .box;
+  min-width: 300px;  // Fixed width
+  min-height: 300px;  // Fixed height
+
+  font-size: 120px;
+  padding: 10px 10px 10px 0px;
+}
+
+.shutdown-dialog {
+  background-color: rgba(75, 0, 130, 0.7);  // Purple-blue with transparency
+  border-radius: 12px;  // Slightly rounded corners
+  
+  // Glass-like effect (optional)
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+
+  font-size: 70px;
+}
+
+
+.shutdown-dialog-button {
+  background-color: rgba(75, 0, 130, 0.7);  // Purple-blue with transparency
+  border-radius: 12px;  // Slightly rounded corners
+  
+  // Glass-like effect (optional)
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+
+  font-size: 50px;
+}

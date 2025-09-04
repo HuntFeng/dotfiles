@@ -1,0 +1,8 @@
+@import "./base.scss"
+
+.systemtray_widget {
+  @extend .box;
+  padding: 10px 10px 10px 0px;
+  min-width: 60px;
+  font-size: 40px;
+}

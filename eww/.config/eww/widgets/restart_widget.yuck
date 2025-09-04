@@ -1,0 +1,13 @@
+(
+  defwidget restart_widget []
+  (
+    tooltip
+    "Restart"
+    (
+      button
+      :class "restart"
+      :onclick "reboot"
+      ""
+    )
+  )
+)

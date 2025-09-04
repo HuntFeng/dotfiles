@@ -1,0 +1,14 @@
+* {
+  all: unset; // Unsets everything so you can style everything from scratch
+}
+
+@import "./scss/workspace_widget.scss";
+@import "./scss/datetime_widget.scss";
+@import "./scss/systemtray_widget.scss";
+@import "./scss/volume_widget.scss";
+@import "./scss/battery_widget.scss";
+@import "./scss/network_widget.scss";
+@import "./scss/lock_widget.scss";
+@import "./scss/logout_widget.scss";
+@import "./scss/shutdown_widget.scss";
+@import "./scss/restart_widget.scss";

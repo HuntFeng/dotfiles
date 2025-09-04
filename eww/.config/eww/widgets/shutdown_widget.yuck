@@ -1,0 +1,53 @@
+(
+  defwidget shutdown_widget []
+  (
+    tooltip
+    "Shutdown"
+    (
+      button
+      :class "shutdown"
+      :onclick "eww active-windows | grep -q shutdown_dialog || eww open shutdown_dialog; eww close systemtray"
+      ""
+    )
+  )
+)
+
+(
+  defwindow shutdown_dialog []
+  :monitor 0
+  :windowtype "dialog"
+  :stacking "overlay"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "50%"
+                      :height "25%"
+                      :anchor "center center")
+  (
+    box
+    :class "shutdown-dialog"
+    :orientation "v"
+    :space-evenly false
+    (
+      label 
+      :vexpand true
+      :text "Shutdown computer?"
+    )
+    (
+      box
+      :orientation "h"
+      :space-evenly true
+      (
+        button
+        :class "shutdown-dialog-button"
+        :onclick "eww close shutdown_dialog"
+        "No"
+      )
+      (
+        button
+        :class "shutdown-dialog-button"
+        :onclick "shutdown now"
+        "Yes"
+      )
+    )
+  )
+)

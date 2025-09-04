@@ -1,0 +1,21 @@
+.box {
+  background-color: rgba(75, 0, 130, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+button {
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: rgba(75, 0, 130, 0.9);
+  }
+}
+
+tooltip {
+  font-size: 40px;
+  background-color: rgba(75, 0, 130, 0.5);
+  padding: 10px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
