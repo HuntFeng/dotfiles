@@ -26,3 +26,8 @@
 - neovim
 - yazi
 - sioyek
+- lazygit
+- neofetch
+- htop
+- nvtop
+- xclip
