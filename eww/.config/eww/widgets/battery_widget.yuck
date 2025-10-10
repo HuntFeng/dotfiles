@@ -19,7 +19,7 @@
 )
 
 (
-  defvar battery_icon 
+  defwidget battery_icon []
   "${
     EWW_BATTERY != '' && EWW_BATTERY.BAT1.status == 'Discharging' ? 
     (
