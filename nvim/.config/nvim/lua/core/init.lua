@@ -1,5 +1,0 @@
-require("core.mappings")
-require("core.options")
-require("core.polish")
-require("core.status")
-require("core.terminal")
