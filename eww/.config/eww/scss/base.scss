@@ -1,21 +1,21 @@
 .box {
-  background-color: rgba(75, 0, 130, 0.7);
-  border-radius: 12px;
+  background-color: rgba(36, 50, 146, 0.6);
+  border-radius: 5px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  border: 5px solid rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 button {
   transition: all 0.3s ease;
   &:hover {
-    background-color: rgba(75, 0, 130, 0.9);
+    background-color: rgba(76, 89, 148, 0.8);
   }
 }
 
 tooltip {
   font-size: 40px;
-  background-color: rgba(75, 0, 130, 0.5);
+  background-color: rgba(36, 50, 146, 0.6);
   padding: 10px;
   border: 5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 5px;
 }
