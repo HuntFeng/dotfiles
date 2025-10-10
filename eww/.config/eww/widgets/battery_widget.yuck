@@ -9,14 +9,7 @@
       :halign "center"
       :space-evenly false
       :spacing 30
-      (
-        label 
-        :text "${EWW_BATTERY != '' && EWW_BATTERY.BAT1.status == 'Discharging' ? 
-          (EWW_BATTERY != '' && EWW_BATTERY.total_avg < 20 ? '󰂎' : 
-            EWW_BATTERY != '' && EWW_BATTERY.total_avg < 40 ? '󰁻' : 
-            EWW_BATTERY != '' && EWW_BATTERY.total_avg < 60 ? '󰁾' : 
-            EWW_BATTERY != '' && EWW_BATTERY.total_avg < 80 ? '󰂀' : '󰁹') : '󰂄'}"
-      )
+      (battery_icon)
       (
         label 
         :text "${EWW_BATTERY != '' ? round(EWW_BATTERY.total_avg, 0) : 'N/A'}%"
@@ -25,3 +18,20 @@
   )
 )
 
+(
+  defvar battery_icon 
+  "${
+    EWW_BATTERY != '' && EWW_BATTERY.BAT1.status == 'Discharging' ? 
+    (
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 5 ? ' 󰂎' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 15 ? ' 󰁺' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 25 ? ' 󰁻' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 35 ? ' 󰁼' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 45 ? ' 󰁽' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 55 ? ' 󰁾' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 65 ? ' 󰁿' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 75 ? ' 󰂀' : 
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 85 ? ' 󰂁' :
+      EWW_BATTERY != '' && EWW_BATTERY.total_avg < 95 ? ' 󰂂' : '󰁹'
+    ) : '󰂄'}"
+)

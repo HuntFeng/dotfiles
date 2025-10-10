@@ -13,21 +13,26 @@
       button
       :class "volume"
       :onclick "eww close systemtray && pavucontrol &"
-      (
-        box 
-        :orientation "h"
-        :halign "center"
-        :space-evenly false
-        :spacing 40
-        (
-          label 
-          :text "${is_muted == 'true' ? '' : ''}"
-        )
-        (
-          label 
-          :text "${volume}%"
-        )
-      )
+      (volume_info :spacing 40)
+    )
+  )
+)
+
+(
+  defwidget volume_info [spacing]
+  (
+    box 
+    :orientation "h"
+    :halign "center"
+    :space-evenly false
+    :spacing spacing
+    (
+      label 
+      :text "${is_muted == 'true' ? '' : ''}"
+    )
+    (
+      label 
+      :text "${volume}%"
     )
   )
 )

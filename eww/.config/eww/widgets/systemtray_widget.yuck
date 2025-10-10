@@ -13,7 +13,15 @@
     :class "systemtray_widget"
     :halign "end"
     :onclick "eww open systemtray --toggle"
-    ""
+    (
+      box
+      :orientation "h"
+      :spacing 30
+      :space-evenly false
+      (battery_icon)
+      {network_status == "connected" ? "󰖩": "󱚼"}
+      ""
+    )
   )
 )
 
