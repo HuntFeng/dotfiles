@@ -62,14 +62,26 @@ config.keys = {
 		action = wezterm.action.ActivateCopyMode,
 	},
 
-	-- window management
+	-- pane management
 	{
 		key = "w",
 		mods = "ALT",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 	{
+		key = "q",
+		mods = "ALT",
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
+	},
+	{
 		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.SplitPane({
+			direction = "Right",
+		}),
+	},
+	{
+		key = "\\",
 		mods = "ALT",
 		action = wezterm.action.SplitPane({
 			direction = "Right",
@@ -86,11 +98,6 @@ config.keys = {
 		key = "n",
 		mods = "ALT",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
-	},
-	{
-		key = "q",
-		mods = "ALT",
-		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
 
 	-- tab navigation
