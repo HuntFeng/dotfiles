@@ -55,6 +55,12 @@ config.keys = {
 			cwd = wezterm.home_dir,
 		}),
 	},
+	-- copy mode
+	{
+		key = "y",
+		mods = "ALT",
+		action = wezterm.action.ActivateCopyMode,
+	},
 
 	-- window management
 	{
