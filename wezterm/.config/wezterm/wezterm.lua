@@ -119,26 +119,36 @@ config.keys = {
 		action = wezterm.action.ActivateTab(5),
 	},
 
-	-- tab switching with arrows and hjkl
+	-- pane nevigation with arrows and hl
 	{
 		key = "LeftArrow",
 		mods = "ALT",
-		action = wezterm.action.ActivateTabRelative(-1),
+		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "RightArrow",
 		mods = "ALT",
-		action = wezterm.action.ActivateTabRelative(1),
+		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "h",
 		mods = "ALT",
-		action = wezterm.action.ActivateTabRelative(-1),
+		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		key = "l",
 		mods = "ALT",
-		action = wezterm.action.ActivateTabRelative(1),
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "H",
+		mods = "ALT",
+		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "L",
+		mods = "ALT",
+		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
 	},
 
 	-- scrolling
